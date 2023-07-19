@@ -1,0 +1,24 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:l="sap.ui.layout" xmlns:core="sap.ui.core">
+	<Dialog title="Rechazar Solicitud" class="sapUiContentPadding" showCloseButton="true" contentWidth="900px" escapeHandler="true">
+		<content>
+			<l:VerticalLayout id="vertical" width="100%">
+			<!--	<Label text="Nivel a Rechazar"/>
+				<Input id="txtNivel" type="Text" valueHelpOnly="true" enabled="true" editable="true" showValueHelp="true" valueHelpRequest="f_dialogo_nivel" name="Nivel"/>
+			comentado por Marisol Ocampo 16/06/2021 No es necesario seleccionar un nivel ya que por defecto se envia al nivel inicial !-->
+				<Label text="Causal"/>
+				<Input id="txtCausal" type="Text" valueHelpOnly="true" enabled="true" editable="true" showValueHelp="true" valueHelpRequest="f_dialogo_caulsal" name="Puesto de Trabajo"/>
+				<Label text="Observaciones"/>
+		       <TextArea id="Observaciones" value="{/value}" showExceededText="false" maxLength="200" width="100%" valueState="{= ${/value}.length > 200 ? 'Warning' : 'None' }" valueLiveUpdate="true" />
+				 
+			</l:VerticalLayout>
+		</content>
+		<buttons>
+		<Button id="btn_filtrar" text="Aceptar" press="f_aceptar"/>
+			<!-- <Button id="btn_cancelar" 	visible="{= !${device>/system/phone} }"  text="Cancelar Baja" press="onApproveDialog"/>
+				comentado por Marisol Ocampo 16/06/2021 solo el nivel inicial puede cancelar !-->
+		<Button id="btn_cerrar" text="Cerrar" press="f_cerrarFragment" type="Reject"/>
+	
+		
+		</buttons>
+	</Dialog>
+</core:FragmentDefinition>

@@ -1,0 +1,17 @@
+<core:FragmentDefinition
+ xmlns="sap.m" 
+ xmlns:core="sap.ui.core">
+ 
+ 
+ <SelectDialog 
+  id="list_equipos_t" 
+  title="Equipos" 
+  confirm="f_obtiene_equipo"
+  items="{path:'/list_equipos_t'}"
+  cancel="closeDialog">
+  
+  <StandardListItem 
+   title="{Invnr}"
+   description="{Equnr}"/>
+ </SelectDialog>
+</core:FragmentDefinition>

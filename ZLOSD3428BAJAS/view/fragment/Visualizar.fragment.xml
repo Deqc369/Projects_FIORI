@@ -1,0 +1,16 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:l="sap.ui.layout" xmlns:core="sap.ui.core">
+	<Dialog  id="list_adjunto"  title="Visualizar imagen" class="sapUiContentPadding" showCloseButton="true" escapeHandler="true">
+		<content>
+			
+				
+			<Image src="{data>/name}" />
+		</content>
+		<buttons>
+			<Button id="cerrar" text="Cerrar" press="f_cerrar_adjunto" type="Accept"/>
+			<Button id="eliminar" visible="{data>/visible}" text="Eliminar" press="f_eliminar_file" type="Reject"/>
+
+			
+		</buttons>
+
+	</Dialog>
+</core:FragmentDefinition>

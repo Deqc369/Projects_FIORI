@@ -1,0 +1,76 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:l="sap.ui.layout" xmlns:core="sap.ui.core">
+	<Dialog contentWidth="1000px" title="Log Carga Masiva" class="sapUiContentPadding" showCloseButton="true" escapeHandler="true">
+		<content>
+	<IconTabBar
+		id="idIconTabBarMulti"
+		expanded="{device>/isNoPhone}"
+		class="sapUiResponsiveContentPadding">
+		<items>
+			<IconTabFilter
+				icon="sap-icon://accept"
+				iconColor="Positive"
+				count="{totales>/ok}">
+				<List items="{/list_ok}"
+						headerText="Solicitudes creadas">
+						<items>
+							<ObjectListItem
+								title="{Placa}"
+								type="Active"
+								 press="f_adjuntar">
+								<firstStatus>
+									<ObjectStatus
+										text="{Mensaje}"/>
+								</firstStatus>
+							
+							</ObjectListItem>
+						</items>
+					</List>
+			</IconTabFilter>
+			<IconTabFilter
+				icon="sap-icon://alert"
+				iconColor="Critical"
+				count="{totales>/bajas}">
+				<List
+						items="{bajas>/}"
+						headerText="Estos equipos ya fueron  dados de baja">
+						<items>
+							<ObjectListItem  
+								title="{bajas>Placa}"
+								type="Active">
+								<firstStatus>
+									<ObjectStatus
+										text="{bajas>Mensaje}"/>
+								</firstStatus>
+							
+							</ObjectListItem>
+						</items>
+					</List>
+			</IconTabFilter>
+			<IconTabFilter
+				icon="sap-icon://error"
+				iconColor="Negative"
+				count="{totales>/errores}">
+				
+					<List items="{errores>/}"  
+						headerText="Errores">
+						<items>
+							<ObjectListItem
+								title="{errores>Placa}"
+								type="Active" >
+								<firstStatus>
+									<ObjectStatus
+										text="{errores>Mensaje}"/>
+								</firstStatus>
+							</ObjectListItem>
+						</items>
+					</List>
+			</IconTabFilter>
+		</items>
+	</IconTabBar>
+		</content>
+		<buttons>
+			
+			<Button id="btn_cerrar2" text="Cerrar" press="f_cerrarFragment" type="Reject"/>
+		</buttons>
+	</Dialog>
+</core:FragmentDefinition>

@@ -1,0 +1,294 @@
+<edmx:Edmx
+    xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx"
+    xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata"
+    xmlns:sap="http://www.sap.com/Protocols/SAPData" Version="1.0">
+    <edmx:DataServices m:DataServiceVersion="2.0">
+        <Schema
+            xmlns="http://schemas.microsoft.com/ado/2008/09/edm" Namespace="ZLO3428SEGW_CRE_BAJAS_SRV" xml:lang="es" sap:schema-version="1">
+            <EntityType Name="cabeceraSolicitud" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Nosolicitud"/>
+                </Key>
+                <Property Name="Nosolicitud" Type="Edm.String" Nullable="false" MaxLength="10" sap:label="Número" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Placa" Type="Edm.String" Nullable="false" MaxLength="25" sap:label="Nº inventario" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Nivel" Type="Edm.String" Nullable="false" MaxLength="4" sap:label="Nivel" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Fecha" Type="Edm.String" Nullable="false" MaxLength="8" sap:label="Fecha" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Sociedad" Type="Edm.String" Nullable="false" MaxLength="4" sap:label="Soc" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Tiposol" Type="Edm.String" Nullable="false" MaxLength="30" sap:label="Tipo de solicitud" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Equipo" Type="Edm.String" Nullable="false" MaxLength="18" sap:label="Equipo" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Claseequipo" Type="Edm.String" Nullable="false" MaxLength="60" sap:label="CLASE DE EQUIPO" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Pies" Type="Edm.String" Nullable="false" MaxLength="25" sap:label="Pies" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Diagnostico" Type="Edm.String" Nullable="false" MaxLength="40" sap:label="Diagnóstico de la ba" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Ano" Type="Edm.String" Nullable="false" MaxLength="4" sap:label="Año construc." sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Responsable" Type="Edm.String" Nullable="false" MaxLength="30" sap:label="Column name" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Emplazamiento" Type="Edm.String" Nullable="false" MaxLength="4" sap:label="Centro Emplazamiento" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Regional" Type="Edm.String" Nullable="false" MaxLength="25" sap:label="Denominación" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Activofijo" Type="Edm.String" Nullable="false" MaxLength="20" sap:label="Nº activo fijo" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Valorlibros" Type="Edm.String" Nullable="false" MaxLength="25" sap:label="Valor en libros" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Moneda" Type="Edm.String" Nullable="false" MaxLength="5" sap:label="Moneda" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" sap:semantics="currency-code"/>
+                <NavigationProperty Name="archivosAdjuntosSet" Relationship="ZLO3428SEGW_CRE_BAJAS_SRV.AscDetAdjuntos" FromRole="FromRole_AscDetAdjuntos" ToRole="ToRole_AscDetAdjuntos"/>
+                <NavigationProperty Name="detalleSolicitudSet" Relationship="ZLO3428SEGW_CRE_BAJAS_SRV.AscDetConsulta" FromRole="FromRole_AscDetConsulta" ToRole="ToRole_AscDetConsulta"/>
+                <NavigationProperty Name="crearSolicitud" Relationship="ZLO3428SEGW_CRE_BAJAS_SRV.AscConsulta" FromRole="ToRole_AscConsulta" ToRole="FromRole_AscConsulta"/>
+            </EntityType>
+            <EntityType Name="detalleSolicitud" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Placa"/>
+                </Key>
+                <Property Name="Placa" Type="Edm.String" Nullable="false" MaxLength="25" sap:label="Número" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Nosolicitud" Type="Edm.String" Nullable="false" MaxLength="10" sap:label="Consecutivo" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Equipo" Type="Edm.String" Nullable="false" MaxLength="18" sap:label="Equipo" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Causalrechazo" Type="Edm.String" Nullable="false" MaxLength="100" sap:label="Causal de rechazo" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Observaciones" Type="Edm.String" Nullable="false" MaxLength="500" sap:label="Observations" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Noaviso" Type="Edm.String" Nullable="false" MaxLength="25" sap:label="Numero de aviso" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Subcanal" Type="Edm.String" Nullable="false" MaxLength="2" sap:label="Grupo clientes" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Marca" Type="Edm.String" Nullable="false" MaxLength="35" sap:label="Marca" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Estatus" Type="Edm.String" Nullable="false" MaxLength="12" sap:label="Estatus" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Interlocutor" Type="Edm.String" Nullable="false" MaxLength="100" sap:label="Interlocutor" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Aprobador" Type="Edm.String" Nullable="false" MaxLength="100" sap:label="Aprobador" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <NavigationProperty Name="cabeceraSolicitud" Relationship="ZLO3428SEGW_CRE_BAJAS_SRV.AscDetConsulta" FromRole="ToRole_AscDetConsulta" ToRole="FromRole_AscDetConsulta"/>
+            </EntityType>
+            <EntityType Name="archivosAdjuntos" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Placa"/>
+                </Key>
+                <Property Name="Placa" Type="Edm.String" Nullable="false" MaxLength="25" sap:label="Número" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Filename" Type="Edm.String" Nullable="false" MaxLength="74" sap:label="File" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Tipodoc" Type="Edm.String" Nullable="false" MaxLength="20" sap:label="Tipo de adjunto" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Value" Type="Edm.Binary" Nullable="false" sap:label="String binario" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Datestamp" Type="Edm.DateTime" Nullable="false" Precision="7" sap:label="Fecha" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Time" Type="Edm.Time" Nullable="false" Precision="0" sap:label="Hora" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <NavigationProperty Name="crearSolicitud" Relationship="ZLO3428SEGW_CRE_BAJAS_SRV.ASCNewSOl" FromRole="ToRole_ASCNewSOl" ToRole="FromRole_ASCNewSOl"/>
+                <NavigationProperty Name="cabeceraSolicitud" Relationship="ZLO3428SEGW_CRE_BAJAS_SRV.AscDetAdjuntos" FromRole="ToRole_AscDetAdjuntos" ToRole="FromRole_AscDetAdjuntos"/>
+            </EntityType>
+            <EntityType Name="crearSolicitud" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Equipo"/>
+                </Key>
+                <Property Name="Operacion" Type="Edm.String" Nullable="false" MaxLength="1" sap:label="Operacion" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Equipo" Type="Edm.String" Nullable="false" MaxLength="25" sap:label="Nº inventario" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Diagnostico" Type="Edm.String" Nullable="false" MaxLength="40" sap:label="Diagnóstico de la ba" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Noaviso" Type="Edm.String" Nullable="false" MaxLength="25" sap:label="Numero de aviso" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Interlocutor" Type="Edm.String" Nullable="false" MaxLength="100" sap:label="Interlocutor" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Aprobador" Type="Edm.String" Nullable="false" MaxLength="100" sap:label="Aprobador" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <NavigationProperty Name="archivosAdjuntosSet" Relationship="ZLO3428SEGW_CRE_BAJAS_SRV.ASCNewSOl" FromRole="FromRole_ASCNewSOl" ToRole="ToRole_ASCNewSOl"/>
+                <NavigationProperty Name="cabeceraSolicitudSet" Relationship="ZLO3428SEGW_CRE_BAJAS_SRV.AscConsulta" FromRole="FromRole_AscConsulta" ToRole="ToRole_AscConsulta"/>
+                <NavigationProperty Name="log_crecionSet" Relationship="ZLO3428SEGW_CRE_BAJAS_SRV.AscLog" FromRole="FromRole_AscLog" ToRole="ToRole_AscLog"/>
+                <NavigationProperty Name="obtenerfiltroSet" Relationship="ZLO3428SEGW_CRE_BAJAS_SRV.AscFiltro" FromRole="FromRole_AscFiltro" ToRole="ToRole_AscFiltro"/>
+                <NavigationProperty Name="statusnivelSet" Relationship="ZLO3428SEGW_CRE_BAJAS_SRV.AscStatus" FromRole="FromRole_AscStatus" ToRole="ToRole_AscStatus"/>
+            </EntityType>
+            <EntityType Name="Solicitudes" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Placa"/>
+                </Key>
+                <Property Name="Placa" Type="Edm.String" Nullable="false" MaxLength="25" sap:label="Nº inventario" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Nivel" Type="Edm.String" Nullable="false" MaxLength="4" sap:label="Nivel" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Fecha" Type="Edm.String" Nullable="false" MaxLength="8" sap:label="Fecha" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Sociedad" Type="Edm.String" Nullable="false" MaxLength="4" sap:label="Sociedad" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Nosolicitud" Type="Edm.String" Nullable="false" MaxLength="10" sap:label="Número" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Tiposol" Type="Edm.String" Nullable="false" MaxLength="30" sap:label="Tipo de solicitud" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Equipo" Type="Edm.String" Nullable="false" MaxLength="18" sap:label="Equipo" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Claseequipo" Type="Edm.String" Nullable="false" MaxLength="60" sap:label="CLASE DE EQUIPO" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Pies" Type="Edm.String" Nullable="false" MaxLength="25" sap:label="Pies" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Diagnostico" Type="Edm.String" Nullable="false" MaxLength="40" sap:label="Diagnóstico de la ba" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Ano" Type="Edm.String" Nullable="false" MaxLength="4" sap:label="Año construc." sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Responsable" Type="Edm.String" Nullable="false" MaxLength="30" sap:label="Column name" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Regional" Type="Edm.String" Nullable="false" MaxLength="25" sap:label="Denominación" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Activofijo" Type="Edm.String" Nullable="false" MaxLength="20" sap:label="Nº activo fijo" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Valorlibros" Type="Edm.String" Nullable="false" MaxLength="25" sap:label="Valor en libros" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Moneda" Type="Edm.String" Nullable="false" MaxLength="5" sap:label="Moneda" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" sap:semantics="currency-code"/>
+            </EntityType>
+            <EntityType Name="AyudaNiveles" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Nivel"/>
+                </Key>
+                <Property Name="Estatus" Type="Edm.String" Nullable="false" MaxLength="100" sap:label="Descripción" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Nivel" Type="Edm.String" Nullable="false" MaxLength="4" sap:label="Nivel" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="AyudaCausales" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Nivel"/>
+                    <PropertyRef Name="Decripcion"/>
+                </Key>
+                <Property Name="Nivel" Type="Edm.String" Nullable="false" MaxLength="4" sap:label="Nivel" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Decripcion" Type="Edm.String" Nullable="false" MaxLength="100" sap:label="descripción" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="log_crecion" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Placa"/>
+                </Key>
+                <Property Name="Placa" Type="Edm.String" Nullable="false" MaxLength="25" sap:label="Nº inventario" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Usuario" Type="Edm.String" Nullable="false" MaxLength="12" sap:label="Usuario" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Fecha" Type="Edm.String" Nullable="false" MaxLength="8" sap:label="Fecha" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Mensaje" Type="Edm.String" Nullable="false" MaxLength="100" sap:label="Texto mensaje" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Tipom" Type="Edm.String" Nullable="false" MaxLength="1" sap:label="Categ.mensaje" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <NavigationProperty Name="crearSolicitud" Relationship="ZLO3428SEGW_CRE_BAJAS_SRV.AscLog" FromRole="ToRole_AscLog" ToRole="FromRole_AscLog"/>
+            </EntityType>
+            <EntityType Name="AydudaEquipos" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Equnr"/>
+                </Key>
+                <Property Name="Equnr" Type="Edm.String" Nullable="false" MaxLength="18" sap:label="Equipo" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Invnr" Type="Edm.String" Nullable="false" MaxLength="25" sap:label="Nº inventario" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Herst" Type="Edm.String" Nullable="false" MaxLength="30" sap:label="Fabricante" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Zzclasetxt" Type="Edm.String" Nullable="false" MaxLength="40" sap:label="Palabra clave" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="AyudaCentrodeEmplazamiento" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Emplazamiento"/>
+                </Key>
+                <Property Name="Emplazamiento" Type="Edm.String" Nullable="false" MaxLength="4" sap:label="Centro" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Oficina" Type="Edm.String" Nullable="false" MaxLength="4" sap:label="Oficina ventas" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="obtenerfiltro" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Emplazamiento"/>
+                </Key>
+                <Property Name="Emplazamiento" Type="Edm.String" Nullable="false" MaxLength="4" sap:label="Centro" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Ano" Type="Edm.String" Nullable="false" MaxLength="4" sap:label="Año construc." sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Equipo" Type="Edm.String" Nullable="false" MaxLength="18" sap:label="Equipo" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Oficina" Type="Edm.String" Nullable="false" MaxLength="4" sap:label="Oficina ventas" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Fecha" Type="Edm.String" Nullable="false" MaxLength="8" sap:label="Fecha" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Nivel" Type="Edm.String" Nullable="false" MaxLength="4" sap:label="Nivel" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <NavigationProperty Name="crearSolicitud" Relationship="ZLO3428SEGW_CRE_BAJAS_SRV.AscFiltro" FromRole="ToRole_AscFiltro" ToRole="FromRole_AscFiltro"/>
+            </EntityType>
+            <EntityType Name="statusnivel" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Estatus"/>
+                </Key>
+                <Property Name="Mandt" Type="Edm.String" Nullable="false" MaxLength="3" sap:label="Mandante" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Estatus" Type="Edm.String" Nullable="false" MaxLength="100" sap:label="Descripción" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Nivel" Type="Edm.String" Nullable="false" MaxLength="4" sap:label="Nivel" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <Association Name="AscConsulta" sap:content-version="1">
+                <End Type="ZLO3428SEGW_CRE_BAJAS_SRV.crearSolicitud" Multiplicity="1" Role="FromRole_AscConsulta"/>
+                <End Type="ZLO3428SEGW_CRE_BAJAS_SRV.cabeceraSolicitud" Multiplicity="*" Role="ToRole_AscConsulta"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_AscConsulta">
+                        <PropertyRef Name="Equipo"/>
+                    </Principal>
+                    <Dependent Role="ToRole_AscConsulta">
+                        <PropertyRef Name="Placa"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="AscLog" sap:content-version="1">
+                <End Type="ZLO3428SEGW_CRE_BAJAS_SRV.crearSolicitud" Multiplicity="1" Role="FromRole_AscLog"/>
+                <End Type="ZLO3428SEGW_CRE_BAJAS_SRV.log_crecion" Multiplicity="*" Role="ToRole_AscLog"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_AscLog">
+                        <PropertyRef Name="Equipo"/>
+                    </Principal>
+                    <Dependent Role="ToRole_AscLog">
+                        <PropertyRef Name="Placa"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="AscFiltro" sap:content-version="1">
+                <End Type="ZLO3428SEGW_CRE_BAJAS_SRV.crearSolicitud" Multiplicity="1" Role="FromRole_AscFiltro"/>
+                <End Type="ZLO3428SEGW_CRE_BAJAS_SRV.obtenerfiltro" Multiplicity="*" Role="ToRole_AscFiltro"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_AscFiltro">
+                        <PropertyRef Name="Equipo"/>
+                    </Principal>
+                    <Dependent Role="ToRole_AscFiltro">
+                        <PropertyRef Name="Emplazamiento"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="AscStatus" sap:content-version="1">
+                <End Type="ZLO3428SEGW_CRE_BAJAS_SRV.crearSolicitud" Multiplicity="1" Role="FromRole_AscStatus"/>
+                <End Type="ZLO3428SEGW_CRE_BAJAS_SRV.statusnivel" Multiplicity="*" Role="ToRole_AscStatus"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_AscStatus">
+                        <PropertyRef Name="Equipo"/>
+                    </Principal>
+                    <Dependent Role="ToRole_AscStatus">
+                        <PropertyRef Name="Estatus"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="ASCNewSOl" sap:content-version="1">
+                <End Type="ZLO3428SEGW_CRE_BAJAS_SRV.crearSolicitud" Multiplicity="1" Role="FromRole_ASCNewSOl"/>
+                <End Type="ZLO3428SEGW_CRE_BAJAS_SRV.archivosAdjuntos" Multiplicity="*" Role="ToRole_ASCNewSOl"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_ASCNewSOl">
+                        <PropertyRef Name="Equipo"/>
+                    </Principal>
+                    <Dependent Role="ToRole_ASCNewSOl">
+                        <PropertyRef Name="Placa"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="AscDetConsulta" sap:content-version="1">
+                <End Type="ZLO3428SEGW_CRE_BAJAS_SRV.cabeceraSolicitud" Multiplicity="1" Role="FromRole_AscDetConsulta"/>
+                <End Type="ZLO3428SEGW_CRE_BAJAS_SRV.detalleSolicitud" Multiplicity="*" Role="ToRole_AscDetConsulta"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_AscDetConsulta">
+                        <PropertyRef Name="Nosolicitud"/>
+                    </Principal>
+                    <Dependent Role="ToRole_AscDetConsulta">
+                        <PropertyRef Name="Placa"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="AscDetAdjuntos" sap:content-version="1">
+                <End Type="ZLO3428SEGW_CRE_BAJAS_SRV.cabeceraSolicitud" Multiplicity="1" Role="FromRole_AscDetAdjuntos"/>
+                <End Type="ZLO3428SEGW_CRE_BAJAS_SRV.archivosAdjuntos" Multiplicity="*" Role="ToRole_AscDetAdjuntos"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_AscDetAdjuntos">
+                        <PropertyRef Name="Nosolicitud"/>
+                    </Principal>
+                    <Dependent Role="ToRole_AscDetAdjuntos">
+                        <PropertyRef Name="Placa"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <EntityContainer Name="ZLO3428SEGW_CRE_BAJAS_SRV_Entities" m:IsDefaultEntityContainer="true" sap:supported-formats="atom json xlsx">
+                <EntitySet Name="cabeceraSolicitudSet" EntityType="ZLO3428SEGW_CRE_BAJAS_SRV.cabeceraSolicitud" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="detalleSolicitudSet" EntityType="ZLO3428SEGW_CRE_BAJAS_SRV.detalleSolicitud" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="archivosAdjuntosSet" EntityType="ZLO3428SEGW_CRE_BAJAS_SRV.archivosAdjuntos" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="crearSolicitudSet" EntityType="ZLO3428SEGW_CRE_BAJAS_SRV.crearSolicitud" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="SolicitudesSet" EntityType="ZLO3428SEGW_CRE_BAJAS_SRV.Solicitudes" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="AyudaNivelesSet" EntityType="ZLO3428SEGW_CRE_BAJAS_SRV.AyudaNiveles" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="AyudaCausalesSet" EntityType="ZLO3428SEGW_CRE_BAJAS_SRV.AyudaCausales" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="log_crecionSet" EntityType="ZLO3428SEGW_CRE_BAJAS_SRV.log_crecion" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="AydudaEquiposSet" EntityType="ZLO3428SEGW_CRE_BAJAS_SRV.AydudaEquipos" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="AyudaCentrodeEmplazamientoSet" EntityType="ZLO3428SEGW_CRE_BAJAS_SRV.AyudaCentrodeEmplazamiento" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="obtenerfiltroSet" EntityType="ZLO3428SEGW_CRE_BAJAS_SRV.obtenerfiltro" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="statusnivelSet" EntityType="ZLO3428SEGW_CRE_BAJAS_SRV.statusnivel" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <AssociationSet Name="AscDetAdjuntosSet" Association="ZLO3428SEGW_CRE_BAJAS_SRV.AscDetAdjuntos" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="cabeceraSolicitudSet" Role="FromRole_AscDetAdjuntos"/>
+                    <End EntitySet="archivosAdjuntosSet" Role="ToRole_AscDetAdjuntos"/>
+                </AssociationSet>
+                <AssociationSet Name="ASCNewSOlSet" Association="ZLO3428SEGW_CRE_BAJAS_SRV.ASCNewSOl" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="crearSolicitudSet" Role="FromRole_ASCNewSOl"/>
+                    <End EntitySet="archivosAdjuntosSet" Role="ToRole_ASCNewSOl"/>
+                </AssociationSet>
+                <AssociationSet Name="AscFiltroSet" Association="ZLO3428SEGW_CRE_BAJAS_SRV.AscFiltro" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="crearSolicitudSet" Role="FromRole_AscFiltro"/>
+                    <End EntitySet="obtenerfiltroSet" Role="ToRole_AscFiltro"/>
+                </AssociationSet>
+                <AssociationSet Name="AscDetConsultaSet" Association="ZLO3428SEGW_CRE_BAJAS_SRV.AscDetConsulta" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="cabeceraSolicitudSet" Role="FromRole_AscDetConsulta"/>
+                    <End EntitySet="detalleSolicitudSet" Role="ToRole_AscDetConsulta"/>
+                </AssociationSet>
+                <AssociationSet Name="AscConsultaSet" Association="ZLO3428SEGW_CRE_BAJAS_SRV.AscConsulta" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="crearSolicitudSet" Role="FromRole_AscConsulta"/>
+                    <End EntitySet="cabeceraSolicitudSet" Role="ToRole_AscConsulta"/>
+                </AssociationSet>
+                <AssociationSet Name="AscStatusSet" Association="ZLO3428SEGW_CRE_BAJAS_SRV.AscStatus" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="crearSolicitudSet" Role="FromRole_AscStatus"/>
+                    <End EntitySet="statusnivelSet" Role="ToRole_AscStatus"/>
+                </AssociationSet>
+                <AssociationSet Name="AscLogSet" Association="ZLO3428SEGW_CRE_BAJAS_SRV.AscLog" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="crearSolicitudSet" Role="FromRole_AscLog"/>
+                    <End EntitySet="log_crecionSet" Role="ToRole_AscLog"/>
+                </AssociationSet>
+            </EntityContainer>
+            <atom:link
+                xmlns:atom="http://www.w3.org/2005/Atom" rel="self" href="./sap/ZLO3428SEGW_CRE_BAJAS_SRV/$metadata"/>
+                <atom:link
+                    xmlns:atom="http://www.w3.org/2005/Atom" rel="latest-version" href="./sap/ZLO3428SEGW_CRE_BAJAS_SRV/$metadata"/>
+                </Schema>
+            </edmx:DataServices>
+        </edmx:Edmx>

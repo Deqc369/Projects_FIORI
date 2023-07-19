@@ -1,0 +1,38 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns:l="sap.ui.layout" xmlns:f="sap.ui.layout.form" xmlns:u="sap.ui.unified"
+	xmlns="sap.m" controllerName="APP_BAJAS_3428.APP_BAJAS_3428.controller.Update" xmlns:html="http://www.w3.org/1999/xhtml">
+	<App>
+		<pages>
+			<Page title="Modificar Solicitud">
+				<content>
+					<f:SimpleForm id="form" editable="true" layout="ResponsiveGridLayout" labelSpanXL="4" labelSpanL="3" labelSpanM="4" labelSpanS="12"
+						adjustLabelSpan="false" emptySpanXL="0" emptySpanL="4" emptySpanM="0" emptySpanS="0" columnsXL="2" columnsL="1" columnsM="1"
+						singleContainerFullSize="false">
+						<f:content>
+							<Label text="Placa" labelFor="tipo"/>
+							<Input id="txtPlacam" width="100%" type="Text" enabled="true" editable="false" name="Placa"/>
+							<Label text="Número de aviso" labelFor="aviso"/>
+							<Input id="txtaviso" width="100%" placeholder="Aviso" type="Text" enabled="true" editable="true" name="aviso"/>
+							<Label text="Interlocutor" labelFor="interlocutor"/>
+							<Input id="txtinterlocutor" width="100%" placeholder="Interlocutor" type="Text" enabled="true" editable="true" name="interlocutor"/>
+							<Label text="Aprobador" labelFor="aprobador"/>
+							<Input id="txtaprobador" width="100%" placeholder="AProbador" type="Text" enabled="true" editable="true" name="aprobador"/>
+							<Label text="Dignostico" labelFor="diagn"/>
+							<Input id="txtdiagnostico" width="100%" placeholder="AProbador" type="Text" enabled="false" editable="true" name="aprobador"/>
+							<Label text="" labelFor="diagnostico"/>
+							<Select id="genre" width="100%" forceSelection="true" items="{diagnosticos>/}" 	selectedKey="{Diagnostico}" change="mapeo">
+								<core:Item key="{diagnosticos>Diagnostico}" text="{diagnosticos>Diagnostico}"/>
+							</Select>
+							<l:HorizontalLayout >
+								<FlexBox  alignItems="Center" justifyContent="Center">
+									<items>
+										<Button text="Modificar Solicitud" type="Accept" press="actualizar" class="sapUiSmallMarginEnd"/>
+									</items>
+								</FlexBox>
+							</l:HorizontalLayout>
+						</f:content>
+					</f:SimpleForm>
+				</content>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

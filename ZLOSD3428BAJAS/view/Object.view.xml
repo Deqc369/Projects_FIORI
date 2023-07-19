@@ -1,0 +1,97 @@
+<mvc:View
+	controllerName="APP_BAJAS_3428.APP_BAJAS_3428.controller.Object"
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:semantic="sap.m.semantic"
+	xmlns:footerbar="sap.ushell.ui.footerbar"
+	xmlns:l="sap.ui.layout">
+
+	<ScrollContainer
+		height="100%"
+		width="100%"
+		horizontal="true"
+		vertical="true"
+		focusable="true">
+	<ObjectHeader title="Placa: {detalle>/Placa}" responsive="true">
+		<attributes>
+			<ObjectAttribute text="Marca: {detalle>/Marca}"/>
+		</attributes>
+	</ObjectHeader>
+	
+	<l:Grid hSpacing="0" defaultSpan="XL3 L5 M12 S12" class="sapUiSmallMargin">
+		<Panel width="100%" class="sapUiResponsiveMargin" expandable="true" expanded="true" accessibleRole="Region">
+			<headerToolbar>
+				<Toolbar height="3rem">
+					<Title text="Causal Rechazo"/>
+				</Toolbar>
+			</headerToolbar>
+			<content>
+				<Text text="{detalle>/Causalrechazo}"/>
+			</content>
+		</Panel>
+		<Panel width="100%" class="sapUiResponsiveMargin" expandable="true" expanded="true" accessibleRole="Region">
+			<headerToolbar>
+				<Toolbar height="3rem">
+					<Title text="Observaciones"/>
+				</Toolbar>
+			</headerToolbar>
+			<content>
+			<Link
+				text="Ver Log"
+				press="f_dialogo_log"
+				ariaHasPopup="Dialog" />
+				<Text  text=" - Fecha: " />
+				<Text text="" id="fechaS"/>
+				<Text  text=" - Ultima Mod: " />
+				<Text text="" id="Hora"/>
+				<Text text="{detalle>/Observaciones}"/>
+			</content>
+		</Panel>
+	</l:Grid>
+	<l:Grid hSpacing="0" defaultSpan="XL3 L5 M5 S12" class="sapUiSmallMargin">
+		<Panel width="100%" class="sapUiResponsiveMargin" expandable="true" expanded="true" accessibleRole="Region">
+			<headerToolbar>
+				<Toolbar height="3rem">
+					<Title text="Interlocutor"/>
+				</Toolbar>
+			</headerToolbar>
+			<content>
+				<Text text="{detalle>/Interlocutor}"/>
+			</content>
+		</Panel>
+		<Panel width="100%" class="sapUiResponsiveMargin" expandable="true" expanded="true" accessibleRole="Region">
+			<headerToolbar>
+				<Toolbar height="3rem">
+					<Title text="N° Aviso"/>
+				</Toolbar>
+			</headerToolbar>
+			<content>
+				<Text text="{detalle>/Noaviso}"/>
+			</content>
+		</Panel>
+	</l:Grid>
+	<l:Grid hSpacing="0" defaultSpan="XL3 L5 M5 S12" class="sapUiSmallMargin">
+		<Panel width="100%" class="sapUiResponsiveMargin" expandable="true" expanded="true" accessibleRole="Region">
+			<headerToolbar>
+				<Toolbar height="3rem">
+					<Title text="Aprobador"/>
+				</Toolbar>
+			</headerToolbar>
+			<content>
+				<Text text="{detalle>/Aprobador}"/>
+			</content>
+		</Panel>
+		<Panel width="100%" class="sapUiResponsiveMargin" expandable="true" expanded="true">
+			<headerToolbar>
+				<Toolbar height="3rem">
+					<Title text="Subcanal"/>
+				</Toolbar>
+			</headerToolbar>
+			<content>
+				<Text text="{detalle>/Subcanal}"/>
+			</content>
+		</Panel>
+	</l:Grid>
+		</ScrollContainer>
+
+</mvc:View>

@@ -1,0 +1,34 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:l="sap.ui.layout" xmlns:core="sap.ui.core" xmlns:u="sap.ui.unified">
+	<Dialog contentWidth="600px" title="Adicionar Adjuntos" class="sapUiContentPadding" showCloseButton="true" escapeHandler="true">
+		<content>
+			<Label text="Adicionar Adjuntos" labelFor="fileUploader1"/>
+			<u:FileUploader id="adjuntos" fileType="png,jpg,jpeg,raw,bmp,pdf" width="100%" name="myFileUpload" uploadUrl="upload/"
+				tooltip="Upload your file to the local server" change="previewFile"/>
+			<Table items="{path: '/Files'}">
+				<headerToolbar>
+					<Toolbar>
+						<Title text="Adjuntos" level="H2"/>
+					</Toolbar>
+				</headerToolbar>
+				<columns>
+					<Column>
+						<Text text="Nombre archivo"/>
+					</Column>
+					
+				</columns>
+				<items>
+					<ColumnListItem vAlign="Middle" type="Navigation">
+						<cells>
+							<Text text="{Filename}" wrapping="false"/>
+						</cells>
+					</ColumnListItem>
+				</items>
+			</Table>
+		</content>
+		<buttons>
+			<Button id="btn_cerrar" text="Cerrar" press="f_cerrar_add" type="Reject"/>
+			<Button text="Enviar" press="f_save_add"/>
+		</buttons>
+		
+	</Dialog>
+</core:FragmentDefinition>

@@ -1,0 +1,17 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:html="http://www.w3.org/1999/xhtml" fragmentName="fragmentName1">
+	<Dialog
+		xmlns:l="sap.ui.layout"
+		class="sapUiContentPadding"
+		contentHeight="100%"
+		contentWidth="100%"
+		title="Visor PDF">
+		<html:canvas id="the-canvas"></html:canvas>
+		<core:HTML id="idFrame"/>
+		<buttons>
+			<!--Modificacion del orden de los campos Marisol ocampo 16/06/2021-->      
+			<Button text="Cerrar" press="f_cerrar_adjunto" />
+			<Button text="Eliminar" press="f_eliminar_file" type="Reject" tooltip="Elimina el archivo seleccionado" id="botonE"/>
+			<!--Fin modificacion Marisol ocampo 16/06/2021-->    
+		</buttons>
+	</Dialog>
+</core:FragmentDefinition>

@@ -1,0 +1,38 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:l="sap.ui.layout" xmlns:core="sap.ui.core">
+	<Dialog contentWidth="600px" title="Log Carga Masiva" class="sapUiContentPadding" showCloseButton="true" escapeHandler="true">
+		<content>
+		<List
+		items="{/list_log}"
+		headerText="Resultados">
+		<items>
+			<ObjectListItem
+				title="{Placa}"
+				type="Active">
+				<firstStatus>
+					<ObjectStatus
+						text="{Mensaje}"					/>
+				</firstStatus>
+			
+			</ObjectListItem>
+		</items>
+	</List>
+			<!--	<List
+					items="{/list_log}"
+					headerText="Resultados"
+					growing="true"
+					growingThreshold="4"
+					growingScrollToLoad="false">
+					<StandardListItem
+						title="{Placa}"
+						description="{Mensaje}"
+						icon="{ProductPicUrl}"
+						iconDensityAware="false"
+						iconInset="false" />
+	             </List>-->			
+		</content>
+		<buttons>
+			
+			<Button id="btn_cerrar" text="Cerrar" press="f_cerrarFragment" type="Reject"/>
+		</buttons>
+	</Dialog>
+</core:FragmentDefinition>

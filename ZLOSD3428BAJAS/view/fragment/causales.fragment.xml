@@ -1,0 +1,18 @@
+<core:FragmentDefinition
+ xmlns="sap.m" 
+ xmlns:core="sap.ui.core">
+ 
+ 
+ <SelectDialog 
+  id="list_causales_t" 
+  title="Motivo de Rechazo" 
+  class="sapUiPopupWithPadding" 
+  confirm="f_obtiene_causal"
+  items="{path:'/list_causales_t'}"
+  cancel="closeDialog">
+  
+  <StandardListItem 
+   title="{Nivel}"
+   description="{Decripcion}"/>
+ </SelectDialog>
+</core:FragmentDefinition>

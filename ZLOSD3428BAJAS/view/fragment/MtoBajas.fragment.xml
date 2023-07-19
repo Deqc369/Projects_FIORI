@@ -1,0 +1,17 @@
+<core:FragmentDefinition
+ xmlns="sap.m" 
+ xmlns:core="sap.ui.core">
+	
+ <SelectDialog 
+  id="list_Movimiento" 
+  title="Moviento de bajas" 
+  class="sapUiPopupWithPadding" 
+  confirm="f_actualiza_mto"
+  items="{path:'/list_Movimiento'}"
+  cancel="closeDialog">
+  
+  <StandardListItem 
+   title="{movBajas}"
+   description="{Descripcion}"/>
+ </SelectDialog>
+</core:FragmentDefinition>
